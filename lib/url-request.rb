@@ -10,7 +10,7 @@ class UrlRequest
 
   def init_url(index_url)
     recipes_array = []
-    url = "https://api.edamam.com/search?q=tofu&ingr=5&app_id=ad1706ff&from=10&to=20&app_key=7a10c431116ae20e1c8e3834302aeeeb"
+    url = "https://api.edamam.com/search?q=tofu&ingr=5&app_id=#{ENV["APP_ID"]}&app_key=#{ENV["API_KEY"]}"
     uri = URI.parse(url)
     response = Net::HTTP.get_response(uri)
     recipe_list = JSON.parse(response.body)
