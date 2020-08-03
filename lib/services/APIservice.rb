@@ -1,12 +1,27 @@
+require 'open-uri'
+require 'net/http'
+
+
 class APIService
 
   BASE_URI = "https://api.edamam.com/search"
+  APP_ID = ENV["APP_ID"]
+  API_KEY = ENV["API_KEY"]
 
   def fetch_recipes_by_item(item)
-    url = URI(BASE_URI + "?q=tofu&ingr=5&app_id=#{ENV["APP_ID"]}&app_key=#{ENV["API_KEY"]}")
-    uri = URI.parse(url)
+    uri = URI(BASE_URI + "?q=beef&ingr=5&app_id=#{APP_ID}&app_key=#{API_KEY}")
     response = Net::HTTP.get_response(uri)
+    recipes_list = JSON.parse(response.body)
+    # recipes_list["hits"][0]["recipe"]["label"]
+    recipes_list["q"]
     puts "response= #{response}"
+    puts ""
+    recipe_labels = recipes_list["hits"].collect do |recipe|
+      recipe["recipe"]["label"]
+    end
+
+    recipe_labels.each_with_index {|label, index | puts "#{index}. #{label}" }
+
   end
 
   # def init_url(index_url)

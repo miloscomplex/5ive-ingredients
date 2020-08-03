@@ -7,7 +7,7 @@ class CLI
     @page = 1
     welcome
 
-    until @user_input == "exit"
+    until @user_input == "q"
       main_menu
     end
     puts "Goodbye!"
@@ -37,7 +37,7 @@ class CLI
       puts "you choose fish"
     elsif @user_input == "5"
       puts "you choose vegetarian is this correct?"
-    elsif @user_input == "exit"
+    elsif @user_input == "q"
       "\n"
     else
       puts "Invalid input".colorize(:red)
@@ -45,8 +45,10 @@ class CLI
   end
 
   def search_for_recipe(item)
-
     recipe_hash = @api.fetch_recipes_by_item(item)
+    puts "\nWhich recipe (1-10) do you wish to see?"
+    input = gets.chomp
+
   end
 
 
