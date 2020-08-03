@@ -16,7 +16,7 @@ PLATFORMS
 
 DEPENDENCIES
   colorize
-  nokogiri (= 1.10.8)
+  nokogiri
   pry
 
 BUNDLED WITH
