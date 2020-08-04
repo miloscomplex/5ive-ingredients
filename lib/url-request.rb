@@ -1,5 +1,7 @@
 class UrlRequest
 
+  @recipe_list = Recipe.new
+  
   path = "https://api.edamam.com/search"
 
   attr_accessor :name

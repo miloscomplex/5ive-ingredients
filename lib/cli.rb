@@ -31,12 +31,16 @@ class CLI
       search_for_recipe("beef")
     elsif @user_input == "2"
       puts "you choose chicken"
+      search_for_recipe("chicken")
     elsif @user_input == "3"
       puts "you choose pork"
+      search_for_recipe("pork")
     elsif @user_input == "4"
       puts "you choose fish"
+      search_for_recipe("fish")
     elsif @user_input == "5"
       puts "you choose vegetarian is this correct?"
+      search_for_recipe("tofu")
     elsif @user_input == "q"
       "\n"
     else
@@ -45,6 +49,8 @@ class CLI
   end
 
   def search_for_recipe(item)
+    system("clear")
+    puts "////////-------Here are your recipes-------////////"
     recipe_hash = @api.fetch_recipes_by_item(item)
     puts "\nWhich recipe (1-10) do you wish to see?"
     input = gets.chomp
