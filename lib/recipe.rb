@@ -1,7 +1,13 @@
  class Recipe
+
+
    # should this be called for pagination?
-   def list_recipes(recipe_hash)
-     recipe_labels = recipe_hash["hits"].collect do |recipe|
+   def input_to_index(input)
+     index = input.to_i - 1
+   end
+
+   def list_recipes(recipes_hash)
+     recipe_labels = recipes_hash["hits"].collect do |recipe|
        recipe["recipe"]["label"]
      end
      recipe_labels.each_with_index {|label, index | puts "#{index + 1}. #{label}" }
@@ -9,13 +15,15 @@
 
    # This class will talk to the bin file and display initially the recipe name
    # and if clicked the recipe details
-   def list_recipe_names(recipe_name, num)
-     # display a list of 10 recipes for the user to select from
+   def see_recipe(input, recipes_hash)
+     input = input_to_index(input)
+     system("clear")
+     puts recipes_hash["hits"][input]["recipe"]["label"].upcase
+     puts "\n"
+     print recipes_hash["hits"][input]["recipe"]["ingredientLines"].join(",").gsub(",","\n\n")
+     puts "\n\n----------------------------"
+     puts "See step by step details at:"
+     puts recipes_hash["hits"][input]["recipe"]["url"]
    end
-
-   def recipe_details(recipe_name, recipe)
-     # display the details of the recipe
-   end
-
 
  end
