@@ -1,6 +1,5 @@
  class Recipe
 
-
    # should this be called for pagination?
    def input_to_index(input)
      index = input.to_i - 1
@@ -10,7 +9,8 @@
      recipe_labels = recipes_hash["hits"].collect do |recipe|
        recipe["recipe"]["label"]
      end
-     recipe_labels.each_with_index {|label, index | puts "#{index + 1}. #{label}" }
+     # neat trick use .with_index(1) to avoid index + 1
+     recipe_labels.each.with_index(1) {|label, index | puts "#{index}. #{label}" }
    end
 
    # This class will talk to the bin file and display initially the recipe name
@@ -23,7 +23,9 @@
      print recipes_hash["hits"][input]["recipe"]["ingredientLines"].join(",").gsub(",","\n\n")
      puts "\n\n----------------------------"
      puts "See step by step details at:"
-     puts recipes_hash["hits"][input]["recipe"]["url"]
+     url = recipes_hash["hits"][input]["recipe"]["url"]
+     puts url
+     url
    end
 
  end

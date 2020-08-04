@@ -5,12 +5,12 @@ class APIService
   API_KEY = ENV["EDAMAM_API_KEY"]
 
   def fetch_recipes_by_item(item)
+    # Recipe.clear_all 
+
     uri = URI(BASE_URI + "?q=#{item}&ingr=5&app_id=#{APP_ID}&app_key=#{API_KEY}")
     response = Net::HTTP.get_response(uri)
-    # recipes_hash = JSON.parse(response.body)
-    # recipes_list["hits"][0]["recipe"]["label"]
     puts "response= #{response}"
-    puts ""
+    puts "\n"
     recipes_hash = JSON.parse(response.body)
   end
 
