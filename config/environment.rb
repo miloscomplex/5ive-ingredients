@@ -1,8 +1,3 @@
-# require_relative '../lib/concerns/concerns'
-
-require 'bundler'
-Bundler.require
-
 require 'open-uri'
 require 'net/http'
 require 'json'

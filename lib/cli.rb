@@ -78,7 +78,6 @@ class CLI
 
     @user_input = gets.chomp
     # non-numbers such as "Hi" = 0
-    # @user_input = input_to_index(@user_input)
     if (1..Recipe.all.length) === @user_input.to_i
       display_recipe_details
     else
@@ -101,12 +100,12 @@ class CLI
       new_line
     end
 
-    2.times {new_line}
+    new_line
     puts "----------------------------"
     puts "See step by step details at:"
     puts recipe.url
     2.times {new_line}
-    puts "See website (w), Return to results (r), Start a new search (n), or quit (q)?"
+    puts "See website (w), Return to results (r), Start a new search (n), or Quit (q)?"
 
     input = gets.chomp
     case input
