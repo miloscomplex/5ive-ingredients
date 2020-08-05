@@ -11,9 +11,6 @@ require 'pry'
 require 'colorize'
 
 # Classes
-# require_relative "../lib/models/Character.rb"
-# require_relative "../lib/services/APIService.rb"
-
 require_relative "../lib/cli.rb"
 require_relative "../lib/services/APIservice.rb"
 require_relative "../lib/recipe.rb"
