@@ -3,12 +3,12 @@
 require 'bundler'
 Bundler.require
 
-require 'irb'
 require 'open-uri'
 require 'net/http'
 require 'json'
 require 'pry'
 require 'colorize'
+require 'launchy'
 
 # Classes
 require_relative "../lib/cli.rb"

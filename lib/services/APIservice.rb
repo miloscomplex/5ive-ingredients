@@ -9,8 +9,8 @@ class APIService
 
     uri = URI(BASE_URI + "?q=#{item}&ingr=5&from=0&to=15&app_id=#{APP_ID}&app_key=#{API_KEY}")
     response = Net::HTTP.get_response(uri)
-    puts "response= #{response}"
-    puts "\n"
+    # puts "response= #{response}"
+    # puts "\n"
     recipes_hash = JSON.parse(response.body)
   end
 
