@@ -1,9 +1,5 @@
 class CLI
 
-  def new_line
-    puts "\n"
-  end
-
   def run
     system("clear")
     @user_input = nil
@@ -13,11 +9,7 @@ class CLI
     until @user_input == "q"
       main_menu
     end
-
-    2.times {new_line}
-    puts "Goodbye!"
-    puts "\n"
-
+    main_menu
   end
 
   def welcome
@@ -27,7 +19,6 @@ class CLI
     puts "+ + + + + + + + + + + + + + + + + + + + + + + + + + + +".colorize(:color => :cyan)
     puts "+ + + + + + + + + + + + + + + + + + + + + + + + + + + +".colorize(:color => :yellow)
     new_line
-    main_menu
   end
 
   def main_menu
@@ -35,7 +26,7 @@ class CLI
     puts "SELECT YOUR PROTEIN"
     new_line
     puts "1. Beef, 2. Chicken, 3. Pork, 4. Fish, 5. Tofu"
-
+    new_line
     @user_input = gets.chomp
 
     case @user_input
@@ -50,7 +41,7 @@ class CLI
       when "5"
         search_for_recipes("tofu")
       when "q"
-        "\n"
+        quit
       else
         invalid_input
     end
@@ -91,6 +82,7 @@ class CLI
     if (1..Recipe.all.length) === @user_input.to_i
       display_recipe_details
     else
+      invalid_input
       display_recipes
     end
   end
@@ -98,7 +90,7 @@ class CLI
   def display_recipe_details
     input = input_to_index(@user_input)
     details = Recipe.all[input]
-    #find the recipe details by index
+
     system("clear")
 
     puts details.name.upcase
@@ -123,7 +115,7 @@ class CLI
       when "r"
         display_recipes
       when "q"
-        exit
+        quit
       else
         invalid_input
         display_recipe_details
@@ -136,7 +128,18 @@ class CLI
 
   def invalid_input
     puts ">>Invalid input".colorize(:red)
+    sleep(2)
   end
 
+  def new_line
+    puts "\n"
+  end
+
+  def quit
+    2.times {new_line}
+    puts "Goodbye!"
+    puts "\n"
+    exit
+  end
 
 end
