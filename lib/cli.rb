@@ -89,26 +89,29 @@ class CLI
 
   def display_recipe_details
     input = input_to_index(@user_input)
-    details = Recipe.all[input]
+    recipe = Recipe.all[input]
 
     system("clear")
-
-    puts details.name.upcase
     new_line
-    puts details.recipe_details
+    puts "+ + + + ------ #{@user_input}. #{recipe.name.upcase} ----- + + + +"
+    new_line
+
+    Recipe.parse_details(recipe.recipe_details).each do |r|
+      puts "#{r}"
+      new_line
+    end
 
     2.times {new_line}
     puts "----------------------------"
     puts "See step by step details at:"
-    puts details.url
+    puts recipe.url
     2.times {new_line}
     puts "See website (w), Return to results (r), Start a new search (n), or quit (q)?"
 
-    # Case input
     input = gets.chomp
     case input
       when "w"
-        Launchy.open(details.url)
+        Launchy.open(recipe.url)
         display_recipe_details
       when "n"
         run

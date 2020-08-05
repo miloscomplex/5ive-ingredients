@@ -18,4 +18,10 @@
      @@all.clear
    end
 
+   def self.parse_details(array)
+     array.collect do |a|
+       a.gsub(/\n\s/,"\n").gsub(/\s{2,}/,"\s-\s").gsub(/\s,/,",").gsub(/--\s/,"")
+     end
+   end
+
  end
