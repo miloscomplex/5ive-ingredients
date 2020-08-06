@@ -129,7 +129,7 @@ class CLI
   end
 
   def invalid_input
-    puts ">>Invalid input".colorize(:red)
+    puts "<<Invalid input".colorize(:red)
     sleep(2)
   end
 
