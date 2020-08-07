@@ -8,7 +8,7 @@ You will be initially asked to choose from a list of 5 proteins. Once you have m
 
 **For this CLI to function you must obtain a key from:** [developer.edamam.com](https://developer.edamam.com/)
 
-`APP_ID` `API_KEY` will need to modified in APIservice.rb with your Id & Key
+`APP_ID` & `API_KEY` will need to modified in `lib/services/APIservice.rb` with your Id & Key
 
 ## Usage
 run this file within five_ingredients as bin/run you may need to use CHMOD to change the settings.

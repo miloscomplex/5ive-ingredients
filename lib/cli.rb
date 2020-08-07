@@ -23,9 +23,9 @@ class CLI
 
   def main_menu
     new_line
-    puts "SELECT YOUR PROTEIN"
+    puts "SELECT YOUR PROTEIN OR VEGETARIAN/VEGAN"
     new_line
-    puts "1. Beef, 2. Chicken, 3. Pork, 4. Fish, 5. Tofu"
+    puts "1. Beef, 2. Chicken, 3. Pork, 4. Fish, 5. Vegetarian, 6. Vegan"
     new_line
     @user_input = gets.chomp
 
@@ -39,7 +39,9 @@ class CLI
       when "4"
         search_for_recipes("fish")
       when "5"
-        search_for_recipes("tofu")
+        search_for_recipes("vegetarian")
+      when "6"
+        search_for_recipes("vegan")
       when "q"
         quit
       else
@@ -71,7 +73,7 @@ class CLI
     puts "\n"
 
     Recipe.all.each.with_index(1) do |recipe, index |
-      puts "#{index}. #{recipe.name}"
+      puts "\t#{index}. #{recipe.name}"
     end
 
     puts "\nWhich recipe (1-#{Recipe.all.length}) do you wish to see?"
@@ -141,6 +143,14 @@ class CLI
     2.times {new_line}
     puts "Goodbye!"
     puts "\n"
+    puts "\t    ___"
+    puts "\t  .'o O'-._"
+    puts "\t / O o_.-`|"
+    puts "\t/O_.-'  O |"
+    puts "\t| o   o .-`"
+    puts "\t|o O_.-'"
+    puts "\t'--`"
+    new_line
     exit
   end
 
