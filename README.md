@@ -2,7 +2,7 @@
 
 **What does your program do? What do you need to know to install it? How do you run it? What websites / APIs does it use?**
 
-Due to the current circumstances people are cooking at home more than they used to be, some for the first time. If you’re a beginner, strapped for time or resource starved. Staring at a list of ingredients a mile long can be overwhelming and make for a daunting task to make a meal for yourself or others. Utilizing an API, a user can search for recipes, recipes that only contain five ingredients.  Which means simpler and easier to cook recipes.
+Due to the current circumstances people are cooking at home more than they used to be, some for the first time. If you’re a beginner, strapped for time or resource starved. Staring at a list of ingredients a mile long can be overwhelming and the makings of a daunting task to make a meal for yourself or others. Utilizing an API, a user can search for recipes, recipes that only contain five ingredients.  Which means simpler and easier to cook recipes.
 
 **Note: This is a CLI application**
 
