@@ -1,4 +1,4 @@
-# 5ive Ingredient :: CLI
+# 5ive Ingredients :: CLI
 
 **What does your program do? What do you need to know to install it? How do you run it? What websites / APIs does it use?**
 
@@ -16,14 +16,13 @@ It utilizes the API from [www.edamam.com](https://www.edamam.com/)
 Clone this repository
 
 ```
-{cd five_ingredients}
+$ cd five_ingredients
 ```
-
 
 ## Usage
 run this file within five_ingredients as bin/run you may need to use CHMOD to change the settings.
 
-##Contributing
+## Contributing
 Bug reports and pull requests are welcome on GitHub at https://github.com/miloscomplex/5ive-ingredients. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the Contributor Covenant code of conduct.
 
 ## License
