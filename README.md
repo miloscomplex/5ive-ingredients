@@ -1,4 +1,4 @@
-# 5ive Ingredient Recipes
+# 5ive Ingredient :: CLI
 
 **What does your program do? What do you need to know to install it? How do you run it? What websites / APIs does it use?**
 
@@ -11,6 +11,11 @@ It utilizes the API from [www.edamam.com](https://www.edamam.com/)
 **For this CLI to function you must obtain a key from:** [developer.edamam.com](https://developer.edamam.com/)
 
 `APP_ID` & `API_KEY` will need to modified in `lib/services/APIservice.rb` with your Id & Key
+
+## Installation
+Clone this repository
+
+`cd five_ingredients`
 
 ## Usage
 run this file within five_ingredients as bin/run you may need to use CHMOD to change the settings.
