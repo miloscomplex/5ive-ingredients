@@ -15,7 +15,10 @@ It utilizes the API from [www.edamam.com](https://www.edamam.com/)
 ## Installation
 Clone this repository
 
-`cd five_ingredients`
+`
+cd five_ingredients
+`
+
 
 ## Usage
 run this file within five_ingredients as bin/run you may need to use CHMOD to change the settings.
