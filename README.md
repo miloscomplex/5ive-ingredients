@@ -15,9 +15,9 @@ It utilizes the API from [www.edamam.com](https://www.edamam.com/)
 ## Installation
 Clone this repository
 
-`
-cd five_ingredients
-`
+```
+{cd five_ingredients}
+```
 
 
 ## Usage
