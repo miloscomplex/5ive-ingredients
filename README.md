@@ -20,7 +20,7 @@ $ cd five_ingredients
 ```
 
 ## Usage
-run this file within five_ingredients as bin/run you may need to use CHMOD to change the settings.
+Run this file within five_ingredients as bin/run you may need to use CHMOD to change the settings.
 
 ## Contributing
 Bug reports and pull requests are welcome on GitHub at https://github.com/miloscomplex/5ive-ingredients. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the Contributor Covenant code of conduct.

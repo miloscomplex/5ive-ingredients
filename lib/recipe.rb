@@ -1,11 +1,12 @@
  class Recipe
    @@all = []
 
-   attr_accessor :name, :recipe_details, :url
+   attr_accessor :name, :recipe_details, :url, :health_labels
 
-   def initialize(name, recipe_details, url)
+   def initialize(name, recipe_details, health_labels, url)
      @name = name
      @recipe_details = recipe_details
+     @health_labels = health_labels
      @url = url
      @@all << self
    end

@@ -13,11 +13,11 @@ class CLI
   end
 
   def welcome
-    puts "+ + + + + + + + + + + + + + + + + + + + + + + + + + + +".colorize(:color => :yellow)
-    puts "+ + + + + + + + + + + + + + + + + + + + + + + + + + + +".colorize(:color => :cyan)
-    puts "+ - - - - -  WELCOME TO 5IVE RECIPE FINDER  - - - - - +".colorize(:color => :yellow)
-    puts "+ + + + + + + + + + + + + + + + + + + + + + + + + + + +".colorize(:color => :cyan)
-    puts "+ + + + + + + + + + + + + + + + + + + + + + + + + + + +".colorize(:color => :yellow)
+    puts "+ + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + +".colorize(:color => :yellow)
+    puts "+ + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + +".colorize(:color => :cyan)
+    puts "+ - - - - - - - -  WELCOME TO 5IVE RECIPE FINDER  - - - - - - - - +".colorize(:color => :yellow)
+    puts "+ + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + +".colorize(:color => :cyan)
+    puts "+ + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + +".colorize(:color => :yellow)
     new_line
   end
 
@@ -59,7 +59,8 @@ class CLI
       name = recipe["recipe"]["label"]
       recipe_details = recipe["recipe"]["ingredientLines"]
       url = recipe["recipe"]["url"]
-      recipe = Recipe.new(name, recipe_details, url)
+      health_labels = recipe["recipe"]["healthLabels"]
+      recipe = Recipe.new(name, recipe_details, health_labels, url)
     end
 
     display_recipes
@@ -69,7 +70,7 @@ class CLI
   def display_recipes
     system("clear")
     puts "\n"
-    puts "+ + + + ------ Here are your recipes for #{@protein_selection} ----- + + + +"
+    puts "+ + + + ------ Here are your recipes for #{@protein_selection} ----- + + + +".colorize(:color => :cyan)
     puts "\n"
 
     Recipe.all.each.with_index(1) do |recipe, index |
@@ -94,7 +95,7 @@ class CLI
 
     system("clear")
     new_line
-    puts "+ + + + ------ #{@user_input}. #{recipe.name.upcase} ----- + + + +"
+    puts "+ + + + ------ #{@user_input}. #{recipe.name.upcase} ----- + + + +".colorize(:color => :cyan)
     new_line
 
     Recipe.parse_details(recipe.recipe_details).each do |r|
@@ -103,7 +104,8 @@ class CLI
     end
 
     new_line
-    puts "----------------------------"
+    puts "Health Labels: #{recipe.health_labels.join(", ")}"
+    puts "--------------------------------------------------------"
     puts "See step by step details at:"
     puts recipe.url
     2.times {new_line}
