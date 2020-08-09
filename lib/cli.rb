@@ -23,7 +23,7 @@ class CLI
 
   def main_menu
     new_line
-    puts "SELECT YOUR PROTEIN OR VEGETARIAN/VEGAN"
+    puts "SELECT YOUR PROTEIN OR VEGETARIAN / VEGAN"
     new_line
     puts "1. Beef, 2. Chicken, 3. Pork, 4. Fish, 5. Vegetarian, 6. Vegan"
     new_line
@@ -69,9 +69,9 @@ class CLI
 
   def display_recipes
     system("clear")
-    puts "\n"
+    new_line
     puts "+ + + + ------ Here are your recipes for #{@protein_selection} ----- + + + +".colorize(:color => :cyan)
-    puts "\n"
+    new_line
 
     Recipe.all.each.with_index(1) do |recipe, index |
       puts "\t#{index}. #{recipe.name}"
@@ -105,6 +105,7 @@ class CLI
 
     new_line
     puts "Health Labels: #{recipe.health_labels.join(", ")}"
+    new_line
     puts "--------------------------------------------------------"
     puts "See step by step details at:"
     puts recipe.url
