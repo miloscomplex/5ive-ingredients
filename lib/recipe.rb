@@ -11,6 +11,13 @@
      @@all << self
    end
 
+   def self.peanut_free
+     recipe_array = []
+     @@all.select do |recipe|
+      recipe.health_labels.include?("Peanut-Free")
+    end
+   end
+
    def self.all
      @@all
    end
@@ -25,4 +32,4 @@
      end
    end
 
- end
+end
