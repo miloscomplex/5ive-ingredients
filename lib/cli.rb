@@ -63,7 +63,7 @@ class CLI
       recipe = Recipe.new(name, recipe_details, health_labels, url)
     end
 
-    # binding.pry
+    binding.pry
 
     display_recipes
 
